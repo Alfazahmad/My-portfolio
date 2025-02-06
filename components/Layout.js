@@ -11,7 +11,7 @@
 // const Layout = ({ children }) => {
 //   return (
 //     <div
-//       className={`page bg-site text- bg-cover bg-no-repeat ${sora.variable}
+//       className={`page bg-site  bg-cover bg-no-repeat ${sora.variable}
 //   font-sora relative`}
 //     >
 //       <TopLeftImg />
@@ -37,7 +37,7 @@ import TopLeftImg from "../components/TopLeftImg";
 const Layout = ({ children }) => {
   return (
     <div
-      className={`page bg-site text-primary bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
+      className={`page bg-site bg-cover text-secondary bg-no-repeat ${sora.variable} font-sora relative`}
     >
       <TopLeftImg />
       <Nav />
