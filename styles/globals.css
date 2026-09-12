@@ -22,7 +22,8 @@
 
 @layer base {
   body {
-    @apply bg-secondary overflow-hidden leading-relaxed;
+    /* FIXED: Changed bg-secondary to bg-primary and added text-white */
+    @apply bg-primary text-white overflow-hidden leading-relaxed;
   }
 
   .page {
@@ -46,11 +47,11 @@
   }
 
   .input {
-    @apply w-full h-[52px] rounded-lg px-6;
+    @apply w-full h-[52px] rounded-lg px-6 text-white; /* Added text-white here just to be perfectly safe for inputs */
   }
 
   .textarea {
-    @apply w-full h-[180px] p-6 rounded-lg resize-none;
+    @apply w-full h-[180px] p-6 rounded-lg resize-none text-white; /* Added text-white here too */
   }
 
   .input,
