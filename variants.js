@@ -2,12 +2,12 @@ export const fadeIn = (direction, delay) => {
   return {
     hidden: {
       y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
-      opacity: 0,
       x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0,
+      opacity: 0,
       transition: {
         type: 'tween',
-        duration: 1.5,
-        delay: delay,
+        duration: 1.4, // Match or make faster than entrance
+        delay: 0, // Remove entrance delay so elements exit immediately
         ease: [0.25, 0.6, 0.3, 0.8],
       },
     },
@@ -18,7 +18,7 @@ export const fadeIn = (direction, delay) => {
       transition: {
         type: 'tween',
         duration: 1.4,
-        delay: delay,
+        delay: delay, // Delay stays here for staggered entrances
         ease: [0.25, 0.25, 0.25, 0.75],
       },
     },

@@ -4,8 +4,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -13,6 +11,7 @@ module.exports = {
       padding: {
         DEFAULT: "15px",
       },
+      center: true, // Auto-centers containers without needing `mx-auto`
     },
     screens: {
       sm: "640px",
@@ -22,9 +21,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#0a0218',
-        secondary: '#ffffff',
-        accent: '#F13024',
+        primary: "#0a0218",
+        secondary: "#ffffff",
+        accent: "#F13024",
       },
       backgroundImage: {
         explosion: 'url("/bg-explosion.png")',
@@ -36,14 +35,9 @@ module.exports = {
         "spin-slow": "spin 6s linear infinite",
       },
       fontFamily: {
-        poppins: [`var(--font-poppins)`, "sans-serif"],
-        sora: [`var(--font-sora)`, "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        sora: ["var(--font-sora)", "sans-serif"],
       },
-    },
-  },
-  container: {
-    padding: {
-      DEFAULT: "15px",
     },
   },
   plugins: [require("tailwind-scrollbar")],

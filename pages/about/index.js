@@ -1,18 +1,12 @@
-
 import React, { useState } from "react";
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaWordpress,
-  FaFigma,
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
+// Swapped to icons that match a Machine Learning / Python stack
+import { FaPython, FaDatabase, FaGithub } from "react-icons/fa";
+import { 
+  SiTensorflow, 
+  SiJupyter, 
+  SiScikitlearn, 
+  SiKaggle, 
+  SiMysql 
 } from "react-icons/si";
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
@@ -20,64 +14,60 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import CountUp from "react-countup";
 
-// Data
+// Updated Data to match your ML / Student Bio
 const aboutData = [
   {
     title: "skills",
     info: [
       {
-        title: "Web Development",
+        title: "Machine Learning & AI",
         icons: [
-          <FaHtml5 key="html" />,
-          <FaCss3 key="css" />,
-          <FaJs key="js" />,
-          <FaReact key="react" />,
-          <SiNextdotjs key="nextjs" />,
-          <SiFramer key="framer" />,
-          <FaWordpress key="wordpress" />,
+          <FaPython key="python" />,
+          <SiTensorflow key="tf" />,
+          <SiScikitlearn key="scikit" />,
+          <SiJupyter key="jupyter" />,
+          <SiKaggle key="kaggle" />,
         ],
       },
       {
-        title: "UI/UX Design",
+        title: "Data & Tools",
         icons: [
-          <FaFigma key="figma" />,
-          <SiAdobexd key="xd" />,
-          <SiAdobephotoshop key="photoshop" />,
+          <FaDatabase key="db" />,
+          <SiMysql key="mysql" />,
+          <FaGithub key="github" />,
         ],
       },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
-      { title: "Webby Awards - Honoree", stage: "2011 - 2012" },
-      { title: "Adobe Design Achievement Awards - Finalist", stage: "2009 - 2010" },
     ],
   },
   {
     title: "experience",
     info: [
-      { title: "UX/UI Designer - XYZ Company", stage: "2012 - 2023" },
-      { title: "Web Developer - ABC Agency", stage: "2010 - 2012" },
-      { title: "Intern - DEF Corporation", stage: "2008 - 2010" },
+      { title: "Machine Learning Intern - XYZ Tech", stage: "2023 - Present" },
+      { title: "Data Science Projects - Freelance/Academic", stage: "2022 - 2023" },
     ],
   },
   {
-    title: "credentials",
+    title: "education", // Changed from 'credentials' to 'education'
     info: [
-      { title: "Web Development - ABC University, LA, CA", stage: "2011" },
-      { title: "Computer Science Diploma - AV Technical Institute", stage: "2009" },
-      { title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA", stage: "2006" },
+      { title: "Bachelor's Degree - Marwari College, Ranchi", stage: "2022 - 2025" },
+      { title: "Higher Secondary - Your Previous School", stage: "2020 - 2022" },
+    ],
+  },
+  {
+    title: "awards",
+    info: [
+      { title: "Hackathon Winner - AI Track", stage: "2023" },
+      { title: "Kaggle Competition - Top 10%", stage: "2023" },
     ],
   },
 ];
 
-// CountUp Values
+// Updated Stats to match an aspiring ML Engineer
 const stats = [
-  { value: 10, label: "Years of experience" },
-  { value: 250, label: "Satisfied clients" },
-  { value: 650, label: "Finished projects" },
-  { value: 8, label: "Winning awards" },
+  { value: 2, label: "Years of learning" },
+  { value: 15, label: "ML Projects" },
+  { value: 5, label: "Certifications" },
+  { value: 2, label: "Awards won" },
 ];
 
 const About = () => {
@@ -99,7 +89,8 @@ const About = () => {
       </motion.div>
 
       <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
-        {/* Left Section */}
+        
+        {/* Left Section (Bio & Stats) */}
         <div className="flex-1 flex flex-col justify-center">
           <motion.h2
             variants={fadeIn("right", 0.2)}
@@ -136,7 +127,15 @@ const About = () => {
           >
             <div className="flex flex-1 xl:gap-x-6">
               {stats.map((stat, i) => (
-                <div key={i} className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                <div 
+                  key={i} 
+                  // FIXED: Divider is no longer applied to the very last stat item
+                  className={`relative flex-1 ${
+                    i < stats.length - 1 
+                      ? "after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0" 
+                      : ""
+                  }`}
+                >
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                     <CountUp start={0} end={stat.value} duration={5} />+
                   </div>
@@ -149,7 +148,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Right Section */}
+        {/* Right Section (Tabs & Content) */}
         <motion.div
           variants={fadeIn("left", 0.4)}
           initial="hidden"
@@ -163,7 +162,9 @@ const About = () => {
               <div
                 key={itemIndex}
                 className={`cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0 ${
-                  index === itemIndex ? "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300" : ""
+                  index === itemIndex
+                    ? "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
+                    : ""
                 }`}
                 onClick={() => setIndex(itemIndex)}
               >
@@ -179,17 +180,25 @@ const About = () => {
                 key={itemIndex}
                 className="flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
               >
+                {/* Title */}
                 <div className="font-light mb-2 md:mb-0">{item.title}</div>
+                
+                {/* Stage / Dates */}
                 {item.stage && (
                   <>
                     <div className="hidden md:flex">-</div>
                     <div>{item.stage}</div>
                   </>
                 )}
+                
+                {/* Icons */}
                 {item.icons && (
-                  <div className="flex gap-x-4">
+                  // FIXED: Added md:ml-4 so icons don't squish against the title text on desktop
+                  <div className="flex gap-x-4 md:ml-4">
                     {item.icons.map((icon, iconIndex) => (
-                      <div key={iconIndex} className="text-2xl text-white">{icon}</div>
+                      <div key={iconIndex} className="text-2xl text-white">
+                        {icon}
+                      </div>
                     ))}
                   </div>
                 )}
