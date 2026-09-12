@@ -1,99 +1,89 @@
-// import Link from "next/link";
-// import {
-//   RiYoutubeLine,
-//   RiInstagramLine,
-//   RiFacebookLine,
-//   RiDribbbleLine,
-//   RiBehanceLine,
-//   RiPinterestLine,
-// } from "react-icons/ri";
-
-// const Socials = () => {
-//   return (
-//     <div className="flex items-center gap-x-5 text-lg ">
-//       <Link href={"https://www.youtube.com/@AlfazAhmadIndia"} className="hover:text-accent transition-all duration-300">
-//         <RiYoutubeLine />
-//       </Link>
-//       <Link href={"https://www.instagram.com/alfazahmad00/"} className="hover:text-accent transition-all duration-300">
-//         <RiInstagramLine />
-//       </Link>
-//       <Link href={"https://www.facebook.com/"} className="hover:text-accent transition-all duration-300">
-//         <RiFacebookLine />
-//       </Link>
-//       <Link href={"https://x.com/AlfazAhmad0"} className="hover:text-accent transition-all duration-300">
-//         <RiDribbbleLine />
-//       </Link>
-//       <Link href={"https://www.reddit.com/user/Both_Yogurtcloset656/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button"} className="hover:text-accent transition-all duration-300">
-//         <RiBehanceLine />
-//       </Link>
-//       <Link href={"https://pin.it/78IjvGKo5"} className="hover:text-accent transition-all duration-300">
-//         <RiPinterestLine />
-//       </Link>
-//     </div>
-//   );
-// };
-
-// export default Socials;
 
 import Link from "next/link";
 import {
   RiYoutubeLine,
   RiInstagramLine,
-  RiRedditLine, // Import Reddit icon
-  // Import X icon
-  RiPinterestLine,
+  RiRedditLine,
 } from "react-icons/ri";
 
-import { FaDiscord, FaTwitter, FaLinkedin } from "react-icons/fa"; // Import Discord, Twitter (X), and LinkedIn icons
-
+import {
+  FaDiscord,
+  FaTwitter,
+  FaLinkedin,
+  FaTelegramPlane,
+} from "react-icons/fa";
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg ">
+    <div className="flex items-center gap-x-5 text-lg">
       <Link
-        href={"https://www.linkedin.com/in/alfaz-ahmad-ba57a1188/"}
+        href="https://www.linkedin.com/in/alfaz-ahmad-990803430?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hover:text-accent transition-all duration-300"
+        aria-label="LinkedIn"
       >
-        <FaLinkedin className="text-2xl" />{" "}
-        {/* LinkedIn Icon with larger size */}
+        <FaLinkedin className="text-2xl" />
       </Link>
+
       <Link
-        href={"https://www.youtube.com/@AlfazAhmadIndia"}
+        href="https://www.youtube.com/@AlfazAhmadIndia"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hover:text-accent transition-all duration-300"
+        aria-label="YouTube"
       >
         <RiYoutubeLine />
       </Link>
+
       <Link
-        href={"https://www.instagram.com/alfazahmad00/"}
+        href="https://www.instagram.com/alfazahmad0?stkn=eGFybWdiZWlwZWZi"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hover:text-accent transition-all duration-300"
+        aria-label="Instagram"
       >
         <RiInstagramLine />
       </Link>
+
       <Link
-        href={"https://discord.com/yourserver"}
+        href="https://discord.com/yourserver"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hover:text-accent transition-all duration-300"
+        aria-label="Discord"
       >
-        <FaDiscord /> {/* Discord Icon */}
+        <FaDiscord />
       </Link>
+
       <Link
-        href={
-          "https://www.reddit.com/user/Both_Yogurtcloset656/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button"
-        }
+        href="https://www.reddit.com/user/Both_Yogurtcloset656/"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hover:text-accent transition-all duration-300"
+        aria-label="Reddit"
       >
-        <RiRedditLine /> {/* Reddit Icon */}
+        <RiRedditLine />
       </Link>
+
       <Link
-        href={"https://x.com/AlfazAhmad0"}
+        href="https://x.com/AlfazAhmad0"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hover:text-accent transition-all duration-300"
+        aria-label="X"
       >
-        <FaTwitter /> {/* X (formerly Twitter) Icon */}
+        <FaTwitter />
       </Link>
+
       <Link
-        href={"https://pin.it/78IjvGKo5"}
+        href="https://t.me/your_telegram_username"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hover:text-accent transition-all duration-300"
+        aria-label="Telegram"
       >
-        <RiPinterestLine />
+        <FaTelegramPlane />
       </Link>
     </div>
   );
