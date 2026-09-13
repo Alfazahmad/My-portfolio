@@ -47,15 +47,16 @@
   }
 
   .input {
-    @apply w-full h-[52px] rounded-lg px-6 text-white; /* Added text-white here just to be perfectly safe for inputs */
+    @apply w-full h-[52px] rounded-lg px-6 text-white; 
   }
 
   .textarea {
-    @apply w-full h-[180px] p-6 rounded-lg resize-none text-white; /* Added text-white here too */
+    @apply w-full h-[180px] p-6 rounded-lg resize-none text-white; 
   }
 
   .input,
   .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+    /* CHANGED: border-white/20 is now border-white/60, and text-white/30 is now text-white/80 */
+    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/60 placeholder:text-white/80 placeholder:font-light;
   }
 }
